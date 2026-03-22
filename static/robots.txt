@@ -1,0 +1,7 @@
+# allow crawling everything by default
+User-agent: *
+Disallow:
+
+# LLM agents and crawlers — see /llms.txt for optimized access
+# machine-readable info available at /llms.txt
+Sitemap: https://openrx.info/sitemap.xml

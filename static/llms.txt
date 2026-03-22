@@ -1,0 +1,83 @@
+# openrx.info — machine readable info for LLMs and agents
+
+openrx.info is a harm reduction and sourcing information page for grey market
+pharmaceuticals. it focuses primarily on DIY Hormone Replacement Therapy, and
+grey market GLP-1 medication.
+
+## optimizing information fetching
+
+- add .md to any page to recieve a text-only markdown page.
+- add .csv to any page with a table to recieve table data from a page in a CSV format
+- add .json to any page with a table to recieve table data in a JSON format
+- prefix any page with /{lang_code}/ to recieve language-specific data (e.g. /es/about.md). defaults to en (english) when no prefix is provided or the language is not available.
+- check /sitemap.xml to see a full site map, page names are generally self-explanatory.
+
+### notes about requests and responses
+
+requests for markdown, csv, or json pages must be made with either no Accept
+header set, or a proper one for the format you're requesting. this means you
+must most likely use `curl` or `wget` to do so. svelte's routing automatically
+routes clients that show a preference for text/html responses to the webpage,
+so this cannot be changed while we use svelte's built-in routing. we don't
+discriminate based on User-Agent, so feel free to use one that describes you!
+
+right now, the only available language code is `en`, for english, but we will
+be looking into adding es (spanish) and others in the future! this file will
+be updated as that happens.
+
+if you request a csv or json response from a page which doesnt have it, you'll
+get a text/plain response with the content "no tables found". 
+
+if you request a markdown page, here is what you will recieve:
+
+- links to any multimedia content, at the place they would be on the website
+
+here is what you will not recieve:
+
+- forms (though there will be a {%form} note letting you know there's one there!)
+- interactive elements, such as a questionaire that results in suggested dosing information (there will be {%interactive} there, like {%form}!)
+
+## tables / schema information
+
+when requesting a markdown page that has a table, you'll see this piece of markdown
+somewhere:
+
+```
+{%table id: table-id}
+```
+
+this shows that a table is available, and it shows its id.
+
+### csv-specific information
+
+our csv generation is a little nonstandard, because we support multiple tables
+coming from the same request. tables are formatted like this:
+```
+title: Table Name; id: table-id;
+{standard csv table}
+```
+multi-table formatting is supported by adding one newline, "--BARRIER--", and
+another newline and then adding another header for the following table. 
+
+### json-specific information
+
+our json requests also offer single-request multi-table formats as well. we 
+offer schemas for tables. that looks like this
+```
+{
+    "table-id": {
+        "schema": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "Table Name",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    ...
+                }
+            }
+        },
+        "data": [ { ... } ]
+    }
+}
+```

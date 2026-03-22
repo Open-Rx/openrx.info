@@ -1,0 +1,15 @@
+{
+  "trans_button.title": "I'm looking for DIY HRT resources!",
+  "trans_button.description": "Hosted here, information provided by community resources",
+  "glp1_button.title": "I'm looking for GLP-1 resources!",
+  "glp1_button.description": "This currently redirects to gray.guide, but we're working on a locally hosted version",
+  "abortion_button.title": "I'm looking for mail-order abortion resources!",
+  "abortion_button.description": "This currently redirects to plancpills.org, but we're working on a locally hosted version",
+  "other_button.title": "I'm looking for other harm reduction & sourcing resources!",
+  "other_button.description": "We're working on this page!",
+  
+  "links.agents": "I'm an LLM / Agent!",
+  "links.lite": "I'm on an older device / worse connection!",
+  
+  "tagline": "On a mission to build international mutual aid infrastructure"
+}
