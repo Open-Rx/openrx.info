@@ -1,29 +1,38 @@
 import { fetchLocaleString } from '$lib/i18n/index.js';
 
-export const prerender = true;
+export const prerender = false;
 
-export async function load({ cookies, url, parent }) {
-  const lite = cookies.get('lite') === 'true';
+async function readHostname(path: string): Promise<string | null> {
+  try {
+    return (await Bun.file(path).text()).trim() || null;
+  } catch {
+    return null;
+  }
+}
+
+export async function load({ setHeaders, parent }) {
   const { lang } = await parent();
-  
-  return { 
-    lite,
+
+  setHeaders({
+    'Cache-Control': 'public, max-age=86400, stale-while-revalidate=604800'
+  });
+
+  const [onion, i2p] = await Promise.all([
+    readHostname('/keys/tor/hostname'),
+    readHostname('/keys/i2p/hostname'),
+  ]);
+
+  return {
+    lite: false,
     lang,
+    onion,
+    i2p,
     t: {
       generic: {
-        title: await fetchLocaleString("generic.title", lang),
+        title: await fetchLocaleString('generic.title', lang),
       },
     },
   };
 }
 
-export type LoadData = {
-  lite: boolean;
-  lang: string;
-  t: {
-    generic: {
-      title: string;
-    };
-    
-  }
-}
+export type LoadData = Awaited<ReturnType<typeof load>>;

@@ -1,0 +1,30 @@
+{
+  "title": "DIY HRT Directory",
+  "nav-section": "HRT Directory",
+  "attribution": "Content mirrored from <a href=\"https://diyhrt.info\" target=\"_blank\" rel=\"noopener\">diyhrt.info</a> with permission.",
+  "nav": {
+    "transfem": "Transfem Guide",
+    "transmasc": "Transmasc Guide",
+    "resources": "Resources"
+  },
+  "pages": {
+    "index": "DIY HRT Directory",
+    "transfem-intro": "Transfeminine Guide",
+    "transfem-dosing": "Transfem Dosing",
+    "transfem-forms": "Forms of Estrogen",
+    "transfem-faq": "Transfem FAQ",
+    "transfem-risks": "Transfem Risks",
+    "transfem-sources": "Transfem Sources",
+    "transfem-prescribedvsdiy": "Prescribed vs DIY (Transfem)",
+    "transmasc-intro": "Transmasculine Guide",
+    "transmasc-dosing": "Transmasc Dosing",
+    "transmasc-methods": "Forms of Testosterone",
+    "transmasc-faq": "Transmasc FAQ",
+    "transmasc-risks": "Transmasc Risks",
+    "transmasc-sources": "Transmasc Sources",
+    "transmasc-prescribedvsdiy": "Prescribed vs DIY (Transmasc)",
+    "resources-telehealth": "Informed Consent & Telehealth",
+    "resources-bloodtests": "Blood Testing",
+    "resources-injections": "Safe Injection Supplies"
+  }
+}

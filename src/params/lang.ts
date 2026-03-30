@@ -1,3 +1,4 @@
 export function match(param: string) {
-  return ['en', 'es'].includes(param);
+  console.log(`being asked for lang ${param}`)
+  return ['en', 'es', ''].includes(param);
 }

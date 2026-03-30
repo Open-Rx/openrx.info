@@ -1,14 +1,14 @@
 import { renderLocaleMarkdown } from "$lib/i18n/render-md.js";
+import type { EntryGenerator } from "./$types";
 import page from "./+page.md?raw"
 
-export const prerender = true;
 
-export function entries() {
+export const entries: EntryGenerator = () => {
   return [
-    { format: "" },
-    { format: ".md" }
-  ]
-}
+    { lang: 'en', format: '' },
+    { lang: '', format: '' }
+  ];
+};
 
 export async function GET({ params, url }) {
   if (params.format && [".csv", ".json"].includes(params.format)) {

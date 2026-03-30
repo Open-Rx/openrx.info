@@ -3,7 +3,7 @@
 
 %ui/homepage/agent-introduction%
 
-## %ui.about.title%
+## [%ui.about.title%](/about)
 
 ### %ui.about.question.introduction%
 

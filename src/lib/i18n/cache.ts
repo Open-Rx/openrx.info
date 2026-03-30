@@ -2,6 +2,9 @@
 const stringCache: Record<string, Record<string, { dies: number, value: string }>> = {};
 const fragmentCache: Record<string, Record<string, { dies: number, value: string }>> = {};
 
+// const TTL = 1000 * 60 * 60 * 24 * 7;
+const TTL = 0; // for debug only
+
 export function getCachedLocaleString(locale: string, key: string): string | null {
   if (!stringCache[locale] || !stringCache[locale][key]) return null;
   const entry = stringCache[locale][key];
@@ -12,7 +15,7 @@ export function getCachedLocaleString(locale: string, key: string): string | nul
 
 export function setCachedLocaleString(locale: string, key: string, value: string): void {
   if (!stringCache[locale]) stringCache[locale] = {};
-  stringCache[locale][key] = { dies: Date.now() + 1000 * 60 * 60 * 24 * 7, value };
+  stringCache[locale][key] = { dies: Date.now() + TTL, value };
 }
 
 export function getCachedLocaleFragment(locale: string, key: string): string | null {
@@ -25,6 +28,6 @@ export function getCachedLocaleFragment(locale: string, key: string): string | n
 
 export function setCachedLocaleFragment(locale: string, key: string, value: string): void {
   if (!fragmentCache[locale]) fragmentCache[locale] = {};
-  fragmentCache[locale][key] = { dies: Date.now() + 1000 * 60 * 60 * 24 * 7, value };
+  fragmentCache[locale][key] = { dies: Date.now() + TTL, value };
 }
 

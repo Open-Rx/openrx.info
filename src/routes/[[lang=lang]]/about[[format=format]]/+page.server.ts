@@ -1,10 +1,18 @@
 import { fetchLocaleFragment, fetchLocaleString } from '$lib/i18n/index.js';
 import { renderFragmentToHtml, renderLocaleMarkdown } from '$lib/i18n/render-md.js';
+import type { EntryGenerator } from './$types';
 
 export const prerender = true;
 
+export const entries: EntryGenerator = () => {
+  return [
+    { lang: 'en', format: '' },
+    { lang: '', format: '' }
+  ];
+};
+
 export async function load({ cookies, url, parent }) {
-  const lite = cookies.get('lite') === 'true';
+  const lite = false;
   const { lang } = await parent();
   
   return { 

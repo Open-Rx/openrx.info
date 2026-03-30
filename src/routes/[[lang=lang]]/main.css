@@ -1,0 +1,212 @@
+@import "tailwindcss";
+
+/* ─── Global base ─────────────────────────────────────────────────────────── */
+
+body {
+	@apply bg-white text-neutral-900 antialiased;
+}
+
+/* ─── Site header ─────────────────────────────────────────────────────────── */
+
+.site-header {
+	@apply flex items-center justify-between px-6 py-3
+	       border-b border-neutral-200 bg-white
+	       sticky top-0 z-10;
+}
+
+.site-wordmark {
+	@apply text-base font-bold tracking-tight text-neutral-900
+	       hover:text-neutral-600 transition-colors;
+}
+
+.site-nav {
+	@apply flex items-center gap-5;
+}
+
+.site-nav-link {
+	@apply text-sm text-neutral-600 hover:text-neutral-900 transition-colors;
+}
+
+.site-body {
+	@apply min-h-[calc(100vh-3rem)];
+}
+
+/* ─── HRT layout ──────────────────────────────────────────────────────────── */
+
+.hrt-layout {
+	@apply flex;
+}
+
+/* ─── HRT sidebar nav ─────────────────────────────────────────────────────── */
+
+.hrt-nav {
+	@apply w-56 shrink-0 sticky top-12 h-[calc(100vh-3rem)] overflow-y-auto
+	       bg-neutral-50 border-r border-neutral-200
+	       flex flex-col gap-3 px-4 py-5;
+}
+
+.hrt-nav-section-label {
+	@apply pb-3 mb-1 border-b border-neutral-200;
+}
+
+.hrt-nav-section-link {
+	@apply text-sm font-semibold text-neutral-800
+	       hover:text-neutral-600 transition-colors;
+}
+
+.hrt-nav-group {
+	@apply flex flex-col gap-0.5;
+}
+
+.hrt-nav-group-label {
+	@apply cursor-pointer select-none
+	       text-xs font-semibold uppercase tracking-wider
+	       text-neutral-400 py-1
+	       hover:text-neutral-600 transition-colors;
+}
+
+.hrt-nav-list {
+	@apply flex flex-col mt-0.5 ml-1;
+}
+
+.hrt-nav-item {
+	@apply list-none;
+}
+
+.hrt-nav-link {
+	@apply block px-2 py-1 rounded text-sm text-neutral-600
+	       hover:text-neutral-900 hover:bg-neutral-100
+	       transition-colors;
+}
+
+.hrt-nav-attribution {
+	@apply mt-auto pt-4 text-xs text-neutral-400 leading-relaxed;
+}
+
+.hrt-nav-attribution a {
+	@apply underline underline-offset-2 hover:text-neutral-600 transition-colors;
+}
+
+/* ─── HRT main content ────────────────────────────────────────────────────── */
+
+.hrt-main {
+	@apply flex-1 min-w-0 px-8 py-10 max-w-4xl;
+}
+
+.hrt-page-title {
+	@apply text-3xl font-bold text-neutral-900
+	       pb-4 mb-6 border-b border-neutral-200;
+}
+
+/* ─── HRT rendered markdown ───────────────────────────────────────────────── */
+
+.hrt-content {
+	@apply mb-6;
+}
+
+.hrt-content h2 {
+	@apply text-2xl font-semibold text-neutral-800 mt-8 mb-3;
+}
+
+.hrt-content h3 {
+	@apply text-xl font-semibold text-neutral-800 mt-6 mb-2;
+}
+
+.hrt-content h4 {
+	@apply text-sm font-semibold uppercase tracking-wider text-neutral-500 mt-5 mb-2;
+}
+
+.hrt-content p {
+	@apply text-neutral-700 leading-relaxed mb-4;
+}
+
+.hrt-content a {
+	@apply text-blue-600 underline underline-offset-2
+	       hover:text-blue-800 transition-colors;
+}
+
+.hrt-content ul {
+	@apply list-disc ml-5 mb-4 space-y-1 text-neutral-700;
+}
+
+.hrt-content ol {
+	@apply list-decimal ml-5 mb-4 space-y-1 text-neutral-700;
+}
+
+.hrt-content li {
+	@apply leading-relaxed;
+}
+
+.hrt-content strong {
+	@apply font-semibold text-neutral-800;
+}
+
+.hrt-content em {
+	@apply italic;
+}
+
+.hrt-content blockquote {
+	@apply border-l-4 border-neutral-300 pl-4 italic text-neutral-600 my-4;
+}
+
+.hrt-content hr {
+	@apply border-neutral-200 my-6;
+}
+
+.hrt-content code {
+	@apply bg-neutral-100 text-neutral-800 px-1.5 py-0.5 rounded text-sm font-mono;
+}
+
+.hrt-content pre {
+	@apply bg-neutral-100 rounded-lg p-4 overflow-x-auto mb-4 text-sm;
+}
+
+/* ─── HRT tables ──────────────────────────────────────────────────────────── */
+
+.hrt-content table {
+	@apply w-full border-collapse text-sm mb-6;
+}
+
+.hrt-content thead {
+	@apply bg-neutral-100;
+}
+
+.hrt-content th {
+	@apply px-4 py-2.5 text-left font-semibold text-neutral-700
+	       border border-neutral-200;
+}
+
+.hrt-content td {
+	@apply px-4 py-2 text-neutral-700 border border-neutral-200 align-top;
+}
+
+.hrt-content tbody tr:nth-child(even) td {
+	@apply bg-neutral-50;
+}
+
+.hrt-content tbody tr:hover td {
+	@apply bg-blue-50 transition-colors;
+}
+
+/* ─── Homepage alt access (tor / i2p) ────────────────────────────────────── */
+
+.home-alt-access {
+	@apply flex items-center gap-2 text-sm text-neutral-500 mt-2;
+}
+
+.home-alt-access-label {
+	@apply text-neutral-400;
+}
+
+.home-alt-access-link {
+	@apply px-2 py-0.5 rounded text-xs font-mono font-medium
+	       transition-colors;
+}
+
+.home-alt-access-tor {
+	@apply bg-purple-50 text-purple-700 hover:bg-purple-100;
+}
+
+.home-alt-access-i2p {
+	@apply bg-emerald-50 text-emerald-700 hover:bg-emerald-100;
+}

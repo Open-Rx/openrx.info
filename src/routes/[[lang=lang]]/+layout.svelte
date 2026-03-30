@@ -1,23 +1,23 @@
 <script lang="ts">
-	import favicon from '$lib/assets/favicon.svg';
-	import liteCss from '$lib/assets/main.lite.css?url';
-	import fullCss from '$lib/assets/main.full.css?url';
 	import type { Snippet } from 'svelte';
+	import type { LayoutData } from './$types';
+	import './main.css';
 
-	let { children, data }: { children: Snippet<[]>; data: { lite: boolean } } = $props();
-	
+	let { children, data }: { children: Snippet<[]>; data: LayoutData } = $props();
 </script>
 
 <svelte:head>
-	{#if data.lite}
-	    <!-- no favicon, small css -->
-		<link rel="stylesheet" href={liteCss} />
-	{:else}
-	    <!-- yes favicon, full css -->
-	    <link rel="icon" href={favicon} />
-		<link rel="stylesheet" href={fullCss} />
-	{/if} 
+    
 </svelte:head>
 
+<header class="site-header">
+	<a href="/" class="site-wordmark">OpenRx</a>
+	<nav class="site-nav">
+		<a href="/about" class="site-nav-link">{data.t.nav.about}</a>
+		<a href="/hrt" class="site-nav-link">{data.t.nav.hrt}</a>
+	</nav>
+</header>
 
-{@render children()}
+<div class="site-body">
+	{@render children()}
+</div>

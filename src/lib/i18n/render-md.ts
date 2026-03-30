@@ -17,5 +17,6 @@ export async function renderLocaleMarkdown(markdown: string, locale: string) {
 }
 
 export async function renderFragmentToHtml(fragment: string): Promise<string> {
-  return await marked(fragment);
+  const stripped = fragment.replace(/^\{%table id:[^}]+\}\n?/gm, '');
+  return await marked(stripped);
 }
