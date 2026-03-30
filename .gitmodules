@@ -1,0 +1,3 @@
+[submodule "svelte-kit"]
+	path = svelte-kit
+	url = https://github.com/aenriii/kit
