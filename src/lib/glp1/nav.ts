@@ -43,7 +43,6 @@ export function glp1Nav(lang: string): HrtNavGroup[] {
 			label: 'Resources',
 			items: [
 				{ label: 'Dosing Guide', href: p('dosing-guide') },
-				{ label: 'Stairway to Gray', href: p('communities/stairway-to-gray') },
 			]
 		},
 		{
