@@ -1,4 +1,10 @@
 #! /usr/bin/env bash
 
-git push codeberg main
-git push github main
+branch=$1
+
+if [ -z "$branch" ]; then
+    branch="main"
+fi
+
+git push -u codeberg $branch
+git push -u github $branch
