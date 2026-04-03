@@ -1,0 +1,30 @@
+{
+  "title": "Directorio de DIY TRH",
+  "nav-section": "Directorio de TRH",
+  "attribution": "Contenido replicado de <a href=\"https://diyhrt.info\" target=\"_blank\" rel=\"noopener\">diyhrt.info</a> con permiso.",
+  "nav": {
+    "transfem": "Guía Transfemenina",
+    "transmasc": "Guía Transmasculina",
+    "resources": "Recursos"
+  },
+  "pages": {
+    "index": "Directorio de DIY TRH",
+    "transfem-intro": "Guía Transfemenina",
+    "transfem-dosing": "Transfemeninas: Dosis",
+    "transfem-forms": "Formas de Estrógeno",
+    "transfem-faq": "Transfemeninas: Preguntas Frecuentes",
+    "transfem-risks": "Transfemeninas: Riesgos",
+    "transfem-sources": "Transfemeninas: Fuentes",
+    "transfem-prescribedvsdiy": "Prescribido vs DIY (Transfemenina)",
+    "transmasc-intro": "Guía Transmasculina",
+    "transmasc-dosing": "Transmasculinos: Dosis",
+    "transmasc-methods": "Formas de Testosterona",
+    "transmasc-faq": "Transmasculinos: Preguntas Frecuentes",
+    "transmasc-risks": "Transmasculinos: Riesgos",
+    "transmasc-sources": "Transmasculinos: Fuentes",
+    "transmasc-prescribedvsdiy": "Prescribido vs DIY (Transmasculino)",
+    "resources-telehealth": "Consentimiento Informado & Telesalud",
+    "resources-bloodtests": "Análisis de Sangre",
+    "resources-injections": "Suministros de Inyección Seguros"
+  }
+}
