@@ -149,6 +149,7 @@ export function generateNavigation(pages: Record<string, Manifest>): NavData {
 
   for (const [route, manifest] of Object.entries(pages)) {
     const { primaryCategory: primary, secondaryCategory: secondary, id, titleRef, nav } = manifest
+    if (!nav) continue
 
     grouped[primary] ??= {}
     grouped[primary]![secondary] ??= []

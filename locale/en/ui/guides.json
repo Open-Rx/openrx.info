@@ -1,6 +1,12 @@
 {
   "title": "Guides",
   "nav-section": "Guides",
+  "nav": {
+    "injection-technique": "Injection Technique",
+    "reconstitution": "Reconstitution",
+    "safety": "Safety",
+    "payments": "Crypto Payments"
+  },
   "pages": {
     "index": "Guides",
     "subcutaneous-injection": "Subcutaneous Injection Technique",

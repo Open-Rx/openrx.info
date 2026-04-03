@@ -19,17 +19,19 @@ export function manifestPlugin(options: { supportedLanguages: string[] }): Plugi
   }
 
   function scanAndGenerate() {
+    const start = Date.now()
     const files = glob.sync('src/routes/**/manifest.ts', { cwd: root });
     for (const file of files) {
       const route = file.replace('src/routes/', '').replace('/manifest.ts', '');
       const manifest = loadManifest(resolve(root, file));
-      console.log(JSON.stringify(manifest))
       manifestCache[route] = manifest;
       generateFromManifest(manifest, route, {
         supportedLanugages: options.supportedLanguages,
         root,
       });
     }
+    const end = Date.now()
+    console.log(`Generated ${files.length} manifests in ${end - start}ms`)
   }
 
   return {
@@ -44,6 +46,10 @@ export function manifestPlugin(options: { supportedLanguages: string[] }): Plugi
     },
 
     configureServer(server) {
+      // runs before sveltekit's configureServer since we're first in the plugin array,
+      // so generated files exist before sveltekit scans routes
+      scanAndGenerate();
+
       server.watcher.add(resolve(root, 'src/routes/**/manifest.ts'));
       server.watcher.on('change', (path) => {
         if (!path.endsWith('manifest.ts') || path.includes('manifest-plugin')) return;
@@ -62,7 +68,9 @@ export function manifestPlugin(options: { supportedLanguages: string[] }): Plugi
         // invalidate the virtual nav module so it gets rebuilt with new data
         const mod = server.moduleGraph.getModuleById(RESOLVED_MODULE_ID);
         if (mod) server.moduleGraph.invalidateModule(mod);
-        server.hot.send({ type: 'full-reload' });
+
+        // sveltekit needs a full restart to pick up new/changed route files
+        server.restart();
       });
     },
 
