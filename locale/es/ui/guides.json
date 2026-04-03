@@ -1,0 +1,18 @@
+{
+  "title": "Guías",
+  "nav-section": "Guías",
+  "pages": {
+    "index": "Guías",
+    "subcutaneous-injection": "Técnica de Inyección Subcutánea",
+    "intramuscular-injection": "Técnica de Inyección Intramuscular",
+    "reconstitution": "Guía de Reconstitución (Mezclar)",
+    "safe-disposal": "Disponer Seguramente",
+    "crypto-payments": "Pagar con Cripto",
+    "crypto-payments-monero": "Monero (XMR)",
+    "crypto-payments-cash-app": "Cash App",
+    "crypto-payments-paypal": "PayPal",
+    "crypto-payments-coinbase": "Coinbase",
+    "crypto-payments-other": "Otras Plataformas",
+    "crypto-payments-sending": "Enviar Seguramente"
+  }
+}

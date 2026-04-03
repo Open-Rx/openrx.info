@@ -1,0 +1,15 @@
+{
+  "trans_button.title": "¡Estoy buscando recursos sobre DIY TRH!",
+  "trans_button.description": "Hospedado aquí, información proveída por recursos de la comunidad",
+  "glp1_button.title": "¡Estoy buscando recursos sobre GLP-1!",
+  "glp1_button.description": "Esto actualmente redirecciona a gray.guide, pero estamos trabajando en una versión hospedada localmente",
+  "abortion_button.title": "¡Estoy buscando recursos sobre abortar por correo!",
+  "abortion_button.description": "Esto actualmente redirecciona a plancpills.org, pero estamos trabajando en una versión hospedada localmente",
+  "other_button.title": "¡Estoy buscando otros recursos de reducción de daño y proveedores!",
+  "other_button.description": "¡Estamos trabajando en esta página!",
+  
+  "links.agents": "¡Soy una LLM / Agente!",
+  "links.lite": "¡Estoy en un dispositivo viejo / mala conexión!",
+  
+  "tagline": "En una misión para construir infraestructura de apoyo mutuo internacional"
+}
