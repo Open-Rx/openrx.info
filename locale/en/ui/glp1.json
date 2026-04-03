@@ -2,6 +2,13 @@
   "title": "GLP-1 Guide",
   "nav-section": "GLP-1 Guide",
   "attribution": "Content mirrored from <a href=\"https://gray.guide\" target=\"_blank\" rel=\"noopener\">gray.guide</a> with permission.",
+  "nav": {
+    "getting-started": "Getting Started",
+    "safety": "Safety",
+    "path-guides": "Path Guides",
+    "sourcing": "Sourcing",
+    "resources": "Resources"
+  },
   "pages": {
     "index": "GLP-1 Guide",
     "getting-started-options-overview": "Understanding Your Options",

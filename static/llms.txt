@@ -26,7 +26,7 @@ be looking into adding es (spanish) and others in the future! this file will
 be updated as that happens.
 
 if you request a csv or json response from a page which doesnt have it, you'll
-get a text/plain response with the content "no tables found". 
+get a 404 response with the content "Not Found". 
 
 if you request a markdown page, here is what you will recieve:
 

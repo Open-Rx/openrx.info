@@ -1,5 +1,4 @@
 import { fetchLocaleFragment } from '$lib/i18n/index.js';
-
 export interface TableData {
 	id: string;
 	title: string;

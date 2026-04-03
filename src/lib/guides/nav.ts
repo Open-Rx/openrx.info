@@ -27,7 +27,7 @@ export function guidesNav(lang: string): HrtNavGroup[] {
 			label: 'Payments',
 			items: [
 				{ label: 'Why Crypto?', href: p('crypto-payments') },
-				{ label: '⭐ Monero (Recommended)', href: p('crypto-payments/monero') },
+				{ label: 'Why Monero?', href: p('crypto-payments/monero') },
 				{ label: 'Cash App', href: p('crypto-payments/cash-app') },
 				{ label: 'PayPal', href: p('crypto-payments/paypal') },
 				{ label: 'Coinbase', href: p('crypto-payments/coinbase') },

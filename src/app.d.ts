@@ -10,4 +10,9 @@ declare global {
 	}
 }
 
+declare module 'virtual:manifest-nav' {
+	import type { NavData } from '$lib/manifest-plugin/generate';
+	export const nav: NavData;
+}
+
 export {};
