@@ -5,7 +5,9 @@
   "nav": {
     "getting-started": "Getting Started",
     "safety": "Safety",
-    "path-guides": "Path Guides",
+    "path-a": "Path A: Ready-to-Use",
+    "path-b": "Path B: Authentic Vial",
+    "path-c": "Path C: DIY Powder",
     "sourcing": "Sourcing",
     "resources": "Resources"
   },

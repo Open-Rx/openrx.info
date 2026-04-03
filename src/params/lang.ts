@@ -1,4 +1,5 @@
+import { langs } from '$lib/manifest-plugin/langs.generated';
+
 export function match(param: string) {
-  console.log(`being asked for lang ${param}`)
-  return ['en', 'es', ''].includes(param);
+  return (langs as readonly string[]).includes(param);
 }

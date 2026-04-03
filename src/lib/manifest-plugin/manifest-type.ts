@@ -39,7 +39,7 @@ export type Manifest<T extends PrimaryCategory = PrimaryCategory> = {
 export type PrimaryCategory = "hrt" | "glp1" | "guides" | "other";
 export type SecondaryCategory<T extends PrimaryCategory = PrimaryCategory> =
   T extends "hrt" ? "transfem" | "transmasc" | "resources" :
-  T extends "glp1" ? "getting-started" | "safety" | "path-guides" | "sourcing" | "resources" :
+  T extends "glp1" ? "getting-started" | "safety" | "path-a" | "path-b" | "path-c" | "sourcing" | "resources" :
   T extends "guides" ? "injection-technique" | "reconstitution" | "safety" | "payments" :
   T extends "other" ? "other" :
   never;

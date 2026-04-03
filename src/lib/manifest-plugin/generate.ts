@@ -57,7 +57,7 @@ export async function load({ parent }) {
         ),
       }))
     ),
-    rendered: await [
+    rendered: [
       ${manifest.contentSections.map((section) => `
         {
           id: "${section}",
@@ -71,15 +71,13 @@ export async function load({ parent }) {
 export type LoadData = Awaited<ReturnType<typeof load>>;
 
 export const entries: EntryGenerator = () => {
-  return [
-    ${JSON.stringify(
+  return ${JSON.stringify(
       supportedLanugages.flatMap((lang) => {
         return [{ lang }]
       }),
       null,
       2
-    )}
-  ];
+    )};
 }`
 }
 
@@ -105,19 +103,6 @@ export async function GET({ params }: { params: { lang?: string, format?: string
     return new Response(page.csv(), { headers: { 'Content-Type': 'text/csv' } });
   }` : ``}
   return new Response('Not Found', { status: 404 });
-}
-  
-export const entries: EntryGenerator = () => {
-  return [
-    ${JSON.stringify(
-      supportedLanugages.flatMap((lang) => {
-        const formats = generateTables ? ['.md', '.json', '.csv'] : ['.md'];
-        return formats.map((format) => { return { lang, format } })
-      }),
-      null,
-      2
-    )}
-  ];
 }`
 }
 

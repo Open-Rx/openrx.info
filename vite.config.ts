@@ -5,7 +5,7 @@ import { manifestPlugin } from './src/lib/manifest-plugin';
 
 export default defineConfig({
 	plugins: [
-		manifestPlugin({ supportedLanguages: ['en', 'es'] }),
+		manifestPlugin({ supportedLanguages: ['en', 'es', ''] }),
 		tailwindcss(),
 		sveltekit(),
 	]
